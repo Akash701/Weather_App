@@ -10,7 +10,12 @@ dependencies:
   flutter:
     sdk: flutter
 
+
   cupertino_icons: ^0.1.2
+  geolocator: ^6.1.14
+  http: ^0.12.2
+  flutter_spinkit: ^4.1.2+1
+  rflutter_alert: ^1.1.0
 
 dev_dependencies:
   flutter_test:
@@ -27,3 +32,7 @@ flutter:
     fonts:
     - asset: fonts/SpartanMB-Black.otf
       weight: 900
+
+  - family: Josefin Slab
+    fonts:
+      - asset: fonts/JosefinSlab-VariableFont_wght.ttf
