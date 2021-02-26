@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 const kTempTextStyle = TextStyle(
-  fontFamily: 'Spartan MB',
-  fontSize: 100.0,
+  fontFamily: 'Josefin Slab',
+  fontSize: 140,
 );
 
 const kMessageTextStyle = TextStyle(
@@ -16,7 +16,7 @@ const kButtonTextStyle = TextStyle(
 );
 
 const kConditionTextStyle = TextStyle(
-  fontSize: 100.0,
+  fontSize: 50.0,
 );
 const kTextfieldProperty = InputDecoration(
   filled: true,
