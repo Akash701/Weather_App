@@ -18,7 +18,7 @@ class _LocationScreenState extends State<LocationScreen> {
   String city;
   String weathertype;
   String message;
-  //AssetImage image;
+  AssetImage image;
   @override
   void initState() {
     super.initState();
@@ -38,7 +38,7 @@ class _LocationScreenState extends State<LocationScreen> {
       weathertype = weatherModel.getWeatherIcon(conditionId);
       message = weatherModel.getMessage(temperature);
       city = weatherData['name'];
-      //image = weatherModel.getimages(conditionId);
+      image = weatherModel.getimages(conditionId);
     });
   }
 
