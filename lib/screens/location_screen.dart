@@ -16,7 +16,7 @@ class _LocationScreenState extends State<LocationScreen> {
   int temperature;
   int conditionId;
   String city;
-  String weatherIcon;
+  String weathertype;
   String message;
   @override
   void initState() {
@@ -34,7 +34,7 @@ class _LocationScreenState extends State<LocationScreen> {
       double temp = weatherData['main']['temp'];
       temperature = temp.toInt();
       conditionId = weatherData['weather'][0]['id'];
-      weatherIcon = weatherModel.getWeatherIcon(conditionId);
+      weathertype = weatherModel.getWeatherIcon(conditionId);
       message = weatherModel.getMessage(temperature);
       city = weatherData['name'];
     });
@@ -55,7 +55,7 @@ class _LocationScreenState extends State<LocationScreen> {
         constraints: BoxConstraints.expand(),
         child: SafeArea(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               Row(
@@ -67,9 +67,13 @@ class _LocationScreenState extends State<LocationScreen> {
                       updateUI(weatherData);
                     },
                     child: Icon(
-                      Icons.near_me,
-                      size: 50.0,
+                      Icons.location_on_rounded,
+                      size: 30.0,
                     ),
+                  ),
+                  Text(
+                    'Weatherman',
+                    style: TextStyle(fontSize: 30),
                   ),
                   FlatButton(
                     onPressed: () async {
@@ -88,10 +92,22 @@ class _LocationScreenState extends State<LocationScreen> {
                     },
                     child: Icon(
                       Icons.location_city,
-                      size: 50.0,
+                      size: 30.0,
                     ),
                   ),
                 ],
+              ),
+              SizedBox(
+                height: 80,
+              ),
+              Center(
+                child: Text(
+                  "$city",
+                  style: kMessageTextStyle,
+                ),
+              ),
+              SizedBox(
+                height: 20,
               ),
               Padding(
                 padding: EdgeInsets.only(left: 15.0),
@@ -99,27 +115,27 @@ class _LocationScreenState extends State<LocationScreen> {
                   children: <Widget>[
                     Expanded(
                       child: Text(
-                        '$temperature°',
+                        '$temperature°c',
                         style: kTempTextStyle,
                       ),
                     ),
                     Expanded(
                       child: Text(
-                        weatherIcon,
+                        weathertype,
                         style: kConditionTextStyle,
                       ),
                     ),
                   ],
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.only(right: 15.0),
-                child: Text(
-                  '$message in $city',
-                  textAlign: TextAlign.right,
-                  style: kMessageTextStyle,
-                ),
-              ),
+              // Padding(
+              //   padding: EdgeInsets.only(right: 15.0),
+              //   child: Text(
+              //     '$message in $city',
+              //     textAlign: TextAlign.right,
+              //     style: kMessageTextStyle,
+              //   ),
+              // ),
             ],
           ),
         ),
