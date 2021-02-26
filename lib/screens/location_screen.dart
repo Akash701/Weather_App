@@ -56,7 +56,7 @@ class _LocationScreenState extends State<LocationScreen> {
         child: SafeArea(
           child: Column(
             //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+            //crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -107,26 +107,17 @@ class _LocationScreenState extends State<LocationScreen> {
                 ),
               ),
               SizedBox(
-                height: 20,
+                height: 50,
               ),
-              Padding(
-                padding: EdgeInsets.only(left: 15.0),
-                child: Row(
-                  children: <Widget>[
-                    Expanded(
-                      child: Text(
-                        '$temperature°c',
-                        style: kTempTextStyle,
-                      ),
-                    ),
-                    Expanded(
-                      child: Text(
-                        weathertype,
-                        style: kConditionTextStyle,
-                      ),
-                    ),
-                  ],
+              Center(
+                child: Text(
+                  '$temperature°c',
+                  style: kTempTextStyle,
                 ),
+              ),
+              Text(
+                weathertype,
+                style: kConditionTextStyle,
               ),
               // Padding(
               //   padding: EdgeInsets.only(right: 15.0),
