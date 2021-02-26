@@ -18,6 +18,7 @@ class _LocationScreenState extends State<LocationScreen> {
   String city;
   String weathertype;
   String message;
+  //AssetImage image;
   @override
   void initState() {
     super.initState();
@@ -37,6 +38,7 @@ class _LocationScreenState extends State<LocationScreen> {
       weathertype = weatherModel.getWeatherIcon(conditionId);
       message = weatherModel.getMessage(temperature);
       city = weatherData['name'];
+      //image = weatherModel.getimages(conditionId);
     });
   }
 
@@ -46,7 +48,7 @@ class _LocationScreenState extends State<LocationScreen> {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('images/location_background.jpg'),
+            image: AssetImage("images/cloudy.jpg"),
             fit: BoxFit.cover,
             colorFilter: ColorFilter.mode(
                 Colors.white.withOpacity(0.8), BlendMode.dstATop),
@@ -115,18 +117,17 @@ class _LocationScreenState extends State<LocationScreen> {
                   style: kTempTextStyle,
                 ),
               ),
+              Divider(
+                color: Colors.white,
+                thickness: 2,
+                indent: 70,
+                endIndent: 70,
+                height: 50,
+              ),
               Text(
                 weathertype,
                 style: kConditionTextStyle,
               ),
-              // Padding(
-              //   padding: EdgeInsets.only(right: 15.0),
-              //   child: Text(
-              //     '$message in $city',
-              //     textAlign: TextAlign.right,
-              //     style: kMessageTextStyle,
-              //   ),
-              // ),
             ],
           ),
         ),

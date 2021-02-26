@@ -1,5 +1,6 @@
 import 'package:clima/services/location.dart';
 import 'package:clima/services/networking.dart';
+import 'package:flutter/cupertino.dart';
 
 const apikey = '3b586f5920797798470cfb74f43158e4';
 const openMapApi = 'https://api.openweathermap.org/data/2.5/weather';
@@ -54,4 +55,24 @@ class WeatherModel {
       return 'Bring a 🧥 just in case';
     }
   }
+
+//    AssetImage getimages(dynamic condition) {
+//     if (condition < 300) {
+//       return AssetImage('images/stormy.jpg');
+//     } else if (condition < 400) {
+//       return AssetImage('images/rainy.jpg');
+//     } else if (condition < 600) {
+//       return AssetImage('images/it might rain.jpg');
+//     } else if (condition < 700) {
+//       return AssetImage('images/snowy.jpg');
+//     } else if (condition < 800) {
+//       return AssetImage('images/foggy.jpg');
+//     } else if (condition == 800) {
+//       return AssetImage('images/sunny.jpg');
+//     } else if (condition <= 804) {
+//       return AssetImage('images/cloudy.jpg');
+//     } else {
+//       return AssetImage('images/location_background.jpg');
+//     }
+//   }
 }

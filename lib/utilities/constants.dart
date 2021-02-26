@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 const kTempTextStyle = TextStyle(
   fontFamily: 'Josefin Slab',
   fontSize: 140,
+  fontWeight: FontWeight.bold,
 );
 
 const kMessageTextStyle = TextStyle(
-  fontSize: 40.0,
+  fontSize: 60.0,
 );
 
 const kButtonTextStyle = TextStyle(
